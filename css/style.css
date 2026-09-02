@@ -1,11 +1,11 @@
 /* Variables */
 :root {
   color-scheme: light dark;
-  --color-bg: #F2F1EC;
-  --color-bg-secondary: #E8E8E3;
+  --color-bg: #F5F6F5;
+  --color-bg-secondary: #ECEEED;
   --color-text: #121212;
   --color-text-muted: #626866;
-  --color-border: #CACCC7;
+  --color-border: #D1D5D3;
   --color-accent: #3A8B8C;
   --color-accent-text: #2F7071;
   --color-accent-hover: #265C5D;

@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Newsreader";
+  src: url("../fonts/newsreader-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+}
+
 /* Variables */
 :root {
   color-scheme: light dark;
@@ -34,7 +50,7 @@ body {
   overflow-x: hidden;
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
@@ -47,9 +63,8 @@ h1,
 .lead,
 .approach h2,
 .background-copy,
-.contact h2,
-.technology-list li {
-  font-family: Georgia, "Times New Roman", serif;
+.contact h2 {
+  font-family: "Newsreader", serif;
   font-weight: 400;
 }
 
@@ -57,8 +72,8 @@ h1 {
   max-width: 12ch;
   margin: 0;
   font-size: clamp(4.25rem, 12vw, 11.5rem);
-  letter-spacing: -.075em;
-  line-height: .78;
+  letter-spacing: -.055em;
+  line-height: .84;
 }
 
 .eyebrow {
@@ -84,7 +99,7 @@ h1 {
   margin: 0;
   font-size: clamp(1rem, 1.6vw, 1.35rem);
   font-weight: 700;
-  letter-spacing: -.02em;
+  letter-spacing: -.015em;
   line-height: 1.25;
 }
 
@@ -92,7 +107,7 @@ h1 {
   max-width: 34ch;
   margin: 0;
   font-size: clamp(2rem, 4.2vw, 4.15rem);
-  letter-spacing: -.045em;
+  letter-spacing: -.035em;
   line-height: 1.08;
 }
 
@@ -210,7 +225,7 @@ h1 {
 
 .intro > p:first-child {
   font-size: clamp(1.25rem, 2.2vw, 2rem);
-  letter-spacing: -.035em;
+  letter-spacing: -.025em;
   line-height: 1.25;
 }
 
@@ -275,7 +290,7 @@ h1 {
 .service h3 {
   margin: 0 0 .75rem;
   font-size: clamp(1.15rem, 1.8vw, 1.5rem);
-  letter-spacing: -.025em;
+  letter-spacing: -.015em;
 }
 
 .service p {
@@ -297,7 +312,7 @@ h1 {
   padding: 1.25rem 0;
   border-bottom: 1px solid var(--color-border);
   font-size: clamp(1.35rem, 2.3vw, 2rem);
-  letter-spacing: -.025em;
+  letter-spacing: -.015em;
 }
 
 .technology-list li:nth-child(even) {
@@ -318,7 +333,7 @@ h1 {
   max-width: 12ch;
   margin: 0;
   font-size: clamp(3.3rem, 8.8vw, 8.5rem);
-  letter-spacing: -.065em;
+  letter-spacing: -.05em;
   line-height: .9;
 }
 
@@ -353,7 +368,7 @@ h1 {
   border-bottom: 1px solid var(--color-inverse-border);
   counter-increment: principles;
   font-size: clamp(1.2rem, 2vw, 1.65rem);
-  letter-spacing: -.02em;
+  letter-spacing: -.01em;
 }
 
 .principles li::before {
@@ -368,7 +383,7 @@ h1 {
   max-width: 38ch;
   margin: 0;
   font-size: clamp(1.65rem, 3.2vw, 3rem);
-  letter-spacing: -.035em;
+  letter-spacing: -.025em;
   line-height: 1.2;
 }
 
@@ -391,7 +406,7 @@ h1 {
   max-width: 11ch;
   margin: 0;
   font-size: clamp(4rem, 11vw, 10.5rem);
-  letter-spacing: -.07em;
+  letter-spacing: -.055em;
   line-height: .85;
 }
 

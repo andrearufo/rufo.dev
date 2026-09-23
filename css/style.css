@@ -280,6 +280,16 @@ h1 {
   border-left: 1px solid var(--color-border);
 }
 
+.services-3 { grid-template-columns: repeat(3, 1fr); }
+
+.services-3 .service:nth-child(n + 2) {
+  padding-right: clamp(1.25rem, 3vw, 2.5rem);
+  padding-left: clamp(1.25rem, 3vw, 2.5rem);
+  border-left: 1px solid var(--color-border);
+}
+
+.services-3 .service:last-child { padding-right: 0; }
+
 .service-number {
   display: block;
   margin-bottom: 3.5rem;
@@ -480,14 +490,16 @@ h1 {
   }
 
   .section-grid { gap: 3rem; }
-  .services { grid-template-columns: 1fr; }
+  .services,
+  .services-3 { grid-template-columns: 1fr; }
 
   .service {
     min-height: auto;
     padding: 1.4rem 0 2rem;
   }
 
-  .service:nth-child(even) {
+  .service:nth-child(even),
+  .services-3 .service:nth-child(n + 2) {
     padding-left: 0;
     border-left: 0;
   }

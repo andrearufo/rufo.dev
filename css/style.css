@@ -397,6 +397,26 @@ h1 {
   line-height: 1.2;
 }
 
+.timeline {
+  margin: 2.5rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--color-border);
+  list-style: none;
+}
+
+.timeline li {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.timeline span {
+  color: var(--color-accent-text);
+  font: 700 .75rem/1.9 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
 .background .text-link {
   display: inline-block;
   margin-top: 2.5rem;
@@ -518,6 +538,7 @@ h1 {
 
   h1 { font-size: clamp(4rem, 22vw, 7rem); }
   .technology-list { grid-template-columns: 1fr; }
+  .timeline li { grid-template-columns: 1fr; gap: .25rem; }
 
   .technology-list li:nth-child(even) {
     padding-left: 0;

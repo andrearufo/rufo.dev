@@ -1,0 +1,7 @@
+#!/bin/sh
+# Se il commit modifica css/style.css, aggiorna il timestamp ?v= nel link
+# di index.html, così i browser scaricano il CSS nuovo invece di quello in cache.
+# Attivazione (una volta per clone): git config core.hooksPath .githooks
+git diff --cached --name-only | grep -qx 'css/style.css' || exit 0
+sed -i '' "s#css/style.css?v=[0-9]*#css/style.css?v=$(date +%Y%m%d%H%M)#" index.html
+git add index.html

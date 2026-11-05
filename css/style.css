@@ -494,7 +494,7 @@ h1 {
 
 .contact-links {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   margin-top: clamp(4rem, 10vw, 9rem);
   border-top: 1px solid var(--color-contact-border);
 }

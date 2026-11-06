@@ -539,26 +539,53 @@ h1 {
   text-transform: uppercase;
 }
 
+/* Specchietto Last.fm: scheda nei contatti; su desktop, mentre ascolto, diventa un toast fisso */
 .now-playing {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  column-gap: .75rem;
+  row-gap: .15rem;
   align-items: center;
-  gap: .4rem;
-  flex-wrap: wrap;
+  width: 21rem;
+  max-width: 100%;
   margin-top: 3rem;
-  color: var(--color-contact-muted);
+  padding: .75rem;
+  color: var(--color-contact-text);
+  background: rgba(255, 255, 255, .12);
+  border: 1px solid var(--color-contact-border);
+  border-radius: 8px;
   font: 700 .7rem/1.6 var(--font-mono);
   letter-spacing: .04em;
 }
 
 .now-playing[hidden], .now-playing img[hidden] { display: none; }
 
-.now-playing img { margin-right: .35rem; border-radius: 2px; }
+.now-playing img { grid-row: span 2; width: 3.4rem; height: 3.4rem; border-radius: 4px; }
 
-.now-playing a { color: inherit; }
+.now-playing-label {
+  grid-column: 2;
+  font-size: .62rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
 
-.now-playing-label::after { content: ":"; }
+.now-playing a {
+  display: grid;
+  grid-column: 2;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+}
 
-.now-playing-artist::before { content: " — "; }
+.now-playing a > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.now-playing-artist { font-weight: 400; }
+
+.now-playing a:hover .now-playing-title { text-decoration: underline; }
 
 .now-playing-close { display: none; }
 
@@ -568,52 +595,17 @@ h1 {
     z-index: 20;
     right: 1.5rem;
     bottom: 1.5rem;
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    column-gap: .75rem;
-    row-gap: .15rem;
-    align-items: center;
-    width: 21rem;
     margin: 0;
-    padding: .75rem .75rem .75rem .75rem;
     color: var(--color-text);
     background: var(--color-bg-secondary);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
+    border-color: var(--color-border);
     box-shadow: 0 12px 32px rgba(0, 0, 0, .18), 0 2px 6px rgba(0, 0, 0, .08);
     animation: toast-in .4s ease-out;
   }
 
-  .is-toast img { grid-row: span 2; width: 3.4rem; height: 3.4rem; margin: 0; border-radius: 4px; }
+  .is-toast .now-playing-label { color: var(--color-accent-text); }
 
-  .is-toast .now-playing-label::after { content: none; }
-
-  .is-toast .now-playing-label {
-    grid-column: 2;
-    color: var(--color-accent-text);
-    font-size: .62rem;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-  }
-
-  .is-toast a {
-    display: grid;
-    grid-column: 2;
-    min-width: 0;
-    text-decoration: none;
-  }
-
-  .is-toast a > span {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .is-toast .now-playing-artist { color: var(--color-text-muted); font-weight: 400; }
-
-  .is-toast .now-playing-artist::before { content: none; }
-
-  .is-toast a:hover .now-playing-title { text-decoration: underline; }
+  .is-toast .now-playing-artist { color: var(--color-text-muted); }
 
   .is-toast .now-playing-close {
     display: block;

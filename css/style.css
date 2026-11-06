@@ -21,6 +21,7 @@
   --color-inverse-text: #F1F1ED;
   --color-inverse-muted: #A8AEAB;
   --color-inverse-border: #3A403E;
+  --color-inverse-accent: #3A8B8C;
   --color-contact-bg: #3A8B8C;
   --color-contact-text: #121212;
   --color-contact-muted: #121212;
@@ -382,7 +383,7 @@ h1 {
   color: var(--color-inverse-text);
 }
 
-.approach .eyebrow { color: var(--color-accent); }
+.approach .eyebrow { color: var(--color-inverse-accent); }
 
 .approach h2 {
   max-width: 12ch;
@@ -427,7 +428,7 @@ h1 {
 }
 
 .principles li::before {
-  color: var(--color-accent);
+  color: var(--color-inverse-accent);
   content: "0" counter(principles);
   font: 700 .7rem/1.55 var(--font-mono);
   letter-spacing: .08em;
@@ -616,10 +617,11 @@ h1 {
     --color-accent: #3A8B8C;
     --color-accent-text: #78B6B7;
     --color-accent-hover: #82BFC0;
-    --color-inverse-bg: #121212;
-    --color-inverse-text: #F1F1ED;
-    --color-inverse-muted: #A8AEAB;
-    --color-inverse-border: #3A403E;
+    --color-inverse-bg: #F1F1ED;
+    --color-inverse-text: #121212;
+    --color-inverse-muted: #555B59;
+    --color-inverse-border: #C9CECB;
+    --color-inverse-accent: #2F7071;
     --color-contact-bg: #3A8B8C;
     --color-contact-text: #121212;
     --color-contact-muted: #121212;

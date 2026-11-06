@@ -353,9 +353,9 @@
         const t = d.recenttracks && d.recenttracks.track[0];
         if (!t) return;
         const live = (t['@attr'] || {}).nowplaying === 'true';
-        // nascosto se l'ultimo ascolto ha più di 24 ore
-        if (!live && Date.now() - t.date.uts * 1000 > 864e5) { box.hidden = true; return; }
-        box.querySelector('.now-playing-label').textContent = live ? '♪ In ascolto ora' : '♪ Proprio ora sto ascoltando';
+        // nascosto se l'ultimo ascolto ha più di 12 ore
+        if (!live && Date.now() - t.date.uts * 1000 > 432e5) { box.hidden = true; return; }
+        box.querySelector('.now-playing-label').textContent = live ? '♪ Proprio ora sto ascoltando' : '♪ Ultimo ascolto';
         const a = box.querySelector('a');
         a.textContent = t.name + ' — ' + t.artist['#text'];
         a.href = t.url;

@@ -339,7 +339,7 @@
   <script>
     // Brano in ascolto da Spotify, letto da Last.fm (rufoandrea). Senza chiave lo specchietto resta nascosto.
     (() => {
-      const KEY = ''; // chiave API Last.fm (sola lettura, può stare nel codice)
+      const KEY = 'f3fbc5b48f8b51779716310b939c5450'; // chiave API Last.fm (sola lettura, può stare nel codice)
       const box = document.getElementById('now-playing');
       if (!KEY) return;
       const url = 'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rufoandrea&limit=1&format=json&api_key=' + KEY;

@@ -584,7 +584,7 @@ h1 {
     animation: toast-in .4s ease-out;
   }
 
-  .is-toast img { grid-row: span 2; margin: 0; border-radius: 4px; }
+  .is-toast img { grid-row: span 2; width: 3.4rem; height: 3.4rem; margin: 0; border-radius: 4px; }
 
   .is-toast .now-playing-label::after { content: none; }
 

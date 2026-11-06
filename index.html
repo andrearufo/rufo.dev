@@ -24,7 +24,7 @@
   <meta name="twitter:description" content="Guida tecnica e sviluppo di progetti software con Laravel e Vue.">
   <meta name="twitter:image" content="https://rufo.dev/og-image.png">
   <link rel="preload" href="fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=202611061807">
+  <link rel="stylesheet" href="css/style.css?v=202611061954">
   <title>Andrea Rufo — Progetti software con Laravel e Vue, dall'idea alla produzione</title>
   <script type="application/ld+json">
     {
@@ -328,7 +328,7 @@
           <a href="https://github.com/andrearufo" target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://www.instagram.com/rufo.dev/" target="_blank" rel="noreferrer">Instagram</a>
         </div>
-        <p class="now-playing" id="now-playing" hidden><span class="now-playing-label"></span> <a target="_blank" rel="noreferrer"></a></p>
+        <p class="now-playing" id="now-playing" hidden><img alt="" width="40" height="40" hidden><span class="now-playing-label"></span> <a target="_blank" rel="noreferrer"></a></p>
         <footer class="footer">
           <span class="footer-mark"><svg viewBox="0 0 270 168" aria-hidden="true"><use href="#ar"/></svg>Andrea Rufo</span>
           <span>Responsabile tecnico · Laravel e Vue</span>
@@ -351,6 +351,10 @@
         const a = box.querySelector('a');
         a.textContent = t.name + ' — ' + t.artist['#text'];
         a.href = t.url;
+        // 64px per gli schermi retina; Last.fm usa un'immagine segnaposto (2a96cbd8…) quando la copertina manca
+        const img = box.querySelector('img'), src = (t.image[1] || {})['#text'] || '';
+        img.hidden = !src || src.includes('2a96cbd8b46e442fc41c2b86b821562f');
+        if (!img.hidden) img.src = src;
         box.hidden = false;
       }).catch(() => {});
       update();

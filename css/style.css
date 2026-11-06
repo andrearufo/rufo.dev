@@ -540,11 +540,19 @@ h1 {
 }
 
 .now-playing {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  flex-wrap: wrap;
   margin-top: 3rem;
   color: var(--color-contact-muted);
   font: 700 .7rem/1.6 var(--font-mono);
   letter-spacing: .04em;
 }
+
+.now-playing[hidden], .now-playing img[hidden] { display: none; }
+
+.now-playing img { margin-right: .35rem; border-radius: 2px; }
 
 .now-playing a { color: inherit; }
 

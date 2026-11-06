@@ -352,7 +352,7 @@
       const update = () => fetch(url).then(r => r.json()).then(d => {
         const t = d.recenttracks && d.recenttracks.track[0];
         if (!t) return;
-        const live = t['@attr'] && t['@attr'].nowplaying === 'true';
+        const live = (t['@attr'] || {}).nowplaying === 'true';
         // nascosto se l'ultimo ascolto ha più di 24 ore
         if (!live && Date.now() - t.date.uts * 1000 > 864e5) { box.hidden = true; return; }
         box.querySelector('.now-playing-label').textContent = live ? '♪ In ascolto ora' : '♪ Proprio ora sto ascoltando';

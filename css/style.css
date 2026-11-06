@@ -539,6 +539,15 @@ h1 {
   text-transform: uppercase;
 }
 
+.now-playing {
+  margin-top: 3rem;
+  color: var(--color-contact-muted);
+  font: 700 .7rem/1.6 var(--font-mono);
+  letter-spacing: .04em;
+}
+
+.now-playing a { color: inherit; }
+
 /* Responsive */
 @media (max-width: 820px) {
   .hero {

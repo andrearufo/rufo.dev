@@ -24,7 +24,7 @@
   <meta name="twitter:description" content="Guida tecnica e sviluppo di progetti software con Laravel e Vue.">
   <meta name="twitter:image" content="https://rufo.dev/og-image.png">
   <link rel="preload" href="fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=202611062154">
+  <link rel="stylesheet" href="css/style.css?v=202611062210">
   <title>Andrea Rufo — Progetti software con Laravel e Vue, dall'idea alla produzione</title>
   <script type="application/ld+json">
     {
@@ -331,7 +331,7 @@
           <a href="https://www.instagram.com/rufo.dev/" target="_blank" rel="noreferrer">Instagram</a>
           <a href="https://x.com/andrearufo" target="_blank" rel="noreferrer">X</a>
         </div>
-        <p class="now-playing" id="now-playing" hidden><img alt="" width="40" height="40" hidden><span class="now-playing-label"></span> <a target="_blank" rel="noreferrer"></a><button class="now-playing-close" type="button" aria-label="Sposta lo specchietto nei contatti">×</button></p>
+        <p class="now-playing" id="now-playing" hidden><img alt="" width="40" height="40" hidden><span class="now-playing-label"></span> <a target="_blank" rel="noreferrer"><span class="now-playing-title"></span><span class="now-playing-artist"></span></a><button class="now-playing-close" type="button" aria-label="Sposta lo specchietto nei contatti">×</button></p>
         <footer class="footer">
           <span class="footer-mark"><svg viewBox="0 0 270 168" aria-hidden="true"><use href="#ar"/></svg>Andrea Rufo</span>
           <span>Responsabile tecnico · Laravel e Vue</span>
@@ -357,7 +357,8 @@
         if (!live && Date.now() - t.date.uts * 1000 > 432e5) { box.hidden = true; return; }
         box.querySelector('.now-playing-label').textContent = live ? '♪ Proprio ora sto ascoltando' : '♪ Ultimo ascolto';
         const a = box.querySelector('a');
-        a.textContent = t.name + ' — ' + t.artist['#text'];
+        a.querySelector('.now-playing-title').textContent = t.name;
+        a.querySelector('.now-playing-artist').textContent = t.artist['#text'];
         a.href = t.url;
         // 64px per gli schermi retina; Last.fm usa un'immagine segnaposto (2a96cbd8…) quando la copertina manca
         const img = box.querySelector('img'), src = (t.image[1] || {})['#text'] || '';

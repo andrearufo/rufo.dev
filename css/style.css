@@ -558,6 +558,8 @@ h1 {
 
 .now-playing-label::after { content: ":"; }
 
+.now-playing-artist::before { content: " — "; }
+
 .now-playing-close { display: none; }
 
 @media (min-width: 1024px) {
@@ -595,14 +597,23 @@ h1 {
   }
 
   .is-toast a {
+    display: grid;
     grid-column: 2;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    min-width: 0;
     text-decoration: none;
   }
 
-  .is-toast a:hover { text-decoration: underline; }
+  .is-toast a > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .is-toast .now-playing-artist { color: var(--color-text-muted); font-weight: 400; }
+
+  .is-toast .now-playing-artist::before { content: none; }
+
+  .is-toast a:hover .now-playing-title { text-decoration: underline; }
 
   .is-toast .now-playing-close {
     display: block;

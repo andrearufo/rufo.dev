@@ -350,14 +350,22 @@
       const KEY = 'f3fbc5b48f8b51779716310b939c5450'; // chiave API Last.fm (sola lettura, può stare nel codice)
       const box = document.getElementById('now-playing');
       if (!KEY) return;
-      // Su desktop, mentre ascolto, lo specchietto diventa un toast fisso; la × lo riporta nei contatti.
-      let docked = false;
-      box.querySelector('.now-playing-close').onclick = () => { docked = true; box.classList.remove('is-toast'); };
+      // Su desktop, mentre ascolto, lo specchietto diventa un toast fisso, ma solo tra l'apertura e i contatti:
+      // non copre i pulsanti in alto né i link in fondo. La × lo rimanda nel footer.
+      let docked = false, live = false;
+      const hero = document.getElementById('top'), contact = document.getElementById('contact');
+      const place = () => {
+        const clear = hero.getBoundingClientRect().bottom < 0 && contact.getBoundingClientRect().top > innerHeight;
+        box.classList.toggle('is-toast', live && !docked && clear);
+      };
+      box.querySelector('.now-playing-close').onclick = () => { docked = true; place(); };
+      addEventListener('scroll', place, { passive: true });
+      addEventListener('resize', place);
       const url = 'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rufoandrea&limit=1&format=json&api_key=' + KEY;
       const update = () => fetch(url).then(r => r.json()).then(d => {
         const t = d.recenttracks && d.recenttracks.track[0];
         if (!t) return;
-        const live = (t['@attr'] || {}).nowplaying === 'true';
+        live = (t['@attr'] || {}).nowplaying === 'true';
         // nascosto se l'ultimo ascolto ha più di 12 ore
         if (!live && Date.now() - t.date.uts * 1000 > 432e5) { box.hidden = true; return; }
         box.querySelector('.now-playing-label').textContent = live ? '♪ Proprio ora sto ascoltando' : '♪ Ultimo ascolto';
@@ -369,7 +377,7 @@
         const img = box.querySelector('img'), src = (t.image[1] || {})['#text'] || '';
         img.hidden = !src || src.includes('2a96cbd8b46e442fc41c2b86b821562f');
         if (!img.hidden) img.src = src;
-        box.classList.toggle('is-toast', live && !docked);
+        place();
         box.hidden = false;
       }).catch(() => {});
       update();

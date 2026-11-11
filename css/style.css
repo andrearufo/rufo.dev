@@ -445,6 +445,17 @@ h1 {
 
 #work .service-number { margin-bottom: 2rem; }
 
+.service-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  color: var(--color-text-muted);
+  list-style: none;
+}
+
+.service-list strong { color: var(--color-text); font-weight: 600; }
+
 /* Approach */
 .approach {
   padding-block: clamp(5rem, 12vw, 11rem);
@@ -738,6 +749,21 @@ h1 {
   }
 
   .service-number { margin-bottom: 2rem; }
+
+  /* Progetti su mobile: schede in fila con scorrimento orizzontale nativo, la successiva si intravede */
+  #work .services {
+    grid-template-columns: none;
+    grid-auto-columns: 85%;
+    grid-auto-flow: column;
+    margin-inline: calc(var(--gutter) * -1);
+    padding: 0 var(--gutter) .75rem;
+    overflow-x: auto;
+    scroll-padding-inline: var(--gutter);
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+  }
+
+  #work .service { scroll-snap-align: start; }
   .contact-links { grid-template-columns: 1fr; }
 
   .contact-links a + a {
@@ -806,7 +832,8 @@ h1 {
 
 .skip:focus { transform: none; }
 
-a:focus-visible {
+a:focus-visible,
+#work .services:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 5px;
 }

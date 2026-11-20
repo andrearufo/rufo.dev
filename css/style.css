@@ -278,27 +278,40 @@ h1 {
   font-size: clamp(.9rem, 1.15vw, 1.05rem);
 }
 
+/* Etichetta piena: stesso verde in chiaro e in scuro, il bianco resta leggibile (contrasto 5,6:1) */
 .availability {
   display: flex;
   align-items: center;
   gap: .55rem;
-  margin-top: 1.15rem !important;
-  color: var(--color-accent-text);
-  font-size: .8rem;
+  width: fit-content;
+  margin: 0 !important;
+  padding: .4rem .85rem;
+  background: #2F7071;
+  border-radius: 999px;
+  color: #FFF;
+  font-size: .75rem;
   font-weight: 700;
 }
 
 .availability::before {
+  flex: none;
   width: .45rem;
   height: .45rem;
   border-radius: 50%;
   background: currentColor;
   content: "";
+  animation: availability-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes availability-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(255, 255, 255, .45); }
+  50% { opacity: .55; box-shadow: 0 0 0 .3rem rgba(255, 255, 255, 0); }
 }
 
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: .6rem;
   margin-top: 1.75rem;
 }
@@ -727,6 +740,8 @@ h1 {
   .hero-bottom,
   .hero-main { gap: 2rem; }
 
+  .availability { order: -1; font-size: .7rem; }
+
   .hero-links {
     flex-direction: row;
     flex-wrap: wrap;
@@ -845,5 +860,6 @@ a:focus-visible,
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .now-playing.is-toast { animation: none; }
+  .now-playing.is-toast,
+  .availability::before { animation: none; }
 }

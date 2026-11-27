@@ -234,6 +234,16 @@ h1 {
 
 .nav-cta { min-height: 2.4rem; }
 
+/* Cambio lingua IT / EN */
+.lang {
+  color: var(--color-text-muted);
+  font: 700 .75rem/1 var(--font-mono);
+  letter-spacing: .08em;
+  text-decoration: none;
+}
+
+.lang:hover { color: var(--color-accent-hover); }
+
 /* Hero */
 .hero {
   display: flex;
@@ -468,6 +478,20 @@ h1 {
 .oss .technology-list li:hover { border-color: var(--color-border); }
 
 #work .service-number { margin-bottom: 2rem; }
+
+/* "Con chi lavoro" dentro "Cosa faccio" */
+.clients { margin-top: clamp(3rem, 6vw, 4.5rem); }
+
+.clients-title {
+  margin: 0 0 1.25rem;
+  color: var(--color-text-muted);
+  font: 700 .72rem/1.55 var(--font-mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+/* Contatore del carosello dei progetti: visibile solo su mobile */
+.work-counter { display: none; }
 
 .service-list {
   display: grid;
@@ -792,6 +816,16 @@ h1 {
   }
 
   #work .service { scroll-snap-align: start; }
+
+  .work-counter {
+    display: block;
+    margin: -1.75rem 0 0;
+    color: var(--color-text-muted);
+    font: 700 .72rem/1 var(--font-mono);
+    letter-spacing: .08em;
+  }
+
+  .work-counter span { color: var(--color-accent-text); }
   .contact-links { grid-template-columns: 1fr; }
 
   .contact-links a + a {
@@ -802,6 +836,8 @@ h1 {
 
 @media (max-width: 520px) {
   .nav-links { display: none; }
+
+  .lang { margin-left: auto; }
 
   h1 { font-size: clamp(4rem, 22vw, 7rem); }
   .technology-list { grid-template-columns: 1fr; }

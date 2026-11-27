@@ -7,6 +7,9 @@
   <meta name="theme-color" content="#F5F6F5" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://rufo.dev/">
+  <link rel="alternate" hreflang="it" href="https://rufo.dev/">
+  <link rel="alternate" hreflang="en" href="https://rufo.dev/en/">
+  <link rel="alternate" hreflang="x-default" href="https://rufo.dev/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -24,7 +27,7 @@
   <meta name="twitter:description" content="Guida tecnica e sviluppo di progetti software con Laravel e Vue.">
   <meta name="twitter:image" content="https://rufo.dev/og-image.png?v=2">
   <link rel="preload" href="fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=202611201416">
+  <link rel="stylesheet" href="css/style.css?v=202611271025">
   <title>Andrea Rufo — Progetti software con Laravel e Vue, dall'idea alla produzione</title>
   <script type="application/ld+json">
     {
@@ -54,10 +57,10 @@
       <a class="mark" href="#top" aria-label="Andrea Rufo, torna all'inizio"><svg viewBox="0 0 270 168" aria-hidden="true"><use href="#ar"/></svg></a>
       <ul class="nav-links">
         <li><a href="#services">Cosa faccio</a></li>
-        <li><a href="#clients">Con chi lavoro</a></li>
         <li><a href="#work">Progetti</a></li>
         <li><a href="#contact">Contatti</a></li>
       </ul>
+      <a class="lang" href="/en/" hreflang="en" lang="en" aria-label="English version">EN</a>
       <a class="btn btn-primary nav-cta" href="mailto:andrearufodev@gmail.com">Parliamone</a>
     </nav>
   </header>
@@ -106,64 +109,63 @@
     <section class="section shell" id="services" aria-labelledby="services-label">
       <div class="section-grid">
         <h2 class="section-label" id="services-label"><span>02</span> Cosa faccio</h2>
-        <div class="services">
-          <article class="service">
-            <span class="service-number">01</span>
-            <h3>Direzione tecnica di progetto</h3>
-            <p>Analisi dei requisiti, stima di tempi e costi, roadmap, scelte architetturali e coordinamento del team. Se in azienda non c'è un responsabile tecnico, lo sono io per la durata del progetto.</p>
-          </article>
-          <article class="service">
-            <span class="service-number">02</span>
-            <h3>Applicazioni web con Laravel e Vue</h3>
-            <p>Piattaforme, gestionali, portali e API su misura, progettati per crescere ed essere mantenuti nel tempo.</p>
-          </article>
-          <article class="service">
-            <span class="service-number">03</span>
-            <h3>MVP per nuovi prodotti</h3>
-            <p>Dall'idea a una prima versione funzionante in tempi brevi: requisiti essenziali, sviluppo rapido e una base di codice pronta a evolvere.</p>
-          </article>
-          <article class="service">
-            <span class="service-number">04</span>
-            <h3>Progressive Web App</h3>
-            <p>Applicazioni veloci, installabili e utilizzabili anche offline, con un solo codice per desktop e mobile.</p>
-          </article>
-          <article class="service">
-            <span class="service-number">05</span>
-            <h3>Sistemi legacy</h3>
-            <p>Analisi, messa in sicurezza e modernizzazione di software esistenti: aggiornamenti, refactoring e migrazioni graduali, senza fermare il lavoro.</p>
-          </article>
-          <article class="service">
-            <span class="service-number">06</span>
-            <h3>Messa online e infrastruttura</h3>
-            <p>Server Linux e ambienti Docker configurati e documentati: rilasci prevedibili, backup e un software che resta online in modo affidabile.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section shell" id="clients" aria-labelledby="clients-label">
-      <div class="section-grid">
-        <h2 class="section-label" id="clients-label"><span>03</span> Con chi lavoro</h2>
-        <div class="services services-3">
-          <article class="service">
-            <h3>PMI</h3>
-            <p>Software gestionali, portali e integrazioni su misura, oppure l'evoluzione dei sistemi che l'azienda usa ogni giorno e che non si possono fermare.</p>
-          </article>
-          <article class="service">
-            <h3>Startup</h3>
-            <p>Dal concept all'MVP, con scelte tecniche che reggono quando il prodotto cresce e il team si allarga.</p>
-          </article>
-          <article class="service">
-            <h3>Agenzie e team</h3>
-            <p>Sviluppo Laravel e Vue in affiancamento al vostro team, anche su progetti già avviati o in white label.</p>
-          </article>
+        <div>
+          <div class="services">
+            <article class="service">
+              <span class="service-number">01</span>
+              <h3>Direzione tecnica di progetto</h3>
+              <p>Analisi dei requisiti, stima di tempi e costi, roadmap, scelte architetturali e coordinamento del team. Se in azienda non c'è un responsabile tecnico, lo sono io per la durata del progetto.</p>
+            </article>
+            <article class="service">
+              <span class="service-number">02</span>
+              <h3>Applicazioni web con Laravel e Vue</h3>
+              <p>Piattaforme, gestionali, portali e API su misura, progettati per crescere ed essere mantenuti nel tempo.</p>
+            </article>
+            <article class="service">
+              <span class="service-number">03</span>
+              <h3>MVP per nuovi prodotti</h3>
+              <p>Dall'idea a una prima versione funzionante in tempi brevi: requisiti essenziali, sviluppo rapido e una base di codice pronta a evolvere.</p>
+            </article>
+            <article class="service">
+              <span class="service-number">04</span>
+              <h3>Progressive Web App</h3>
+              <p>Applicazioni veloci, installabili e utilizzabili anche offline, con un solo codice per desktop e mobile.</p>
+            </article>
+            <article class="service">
+              <span class="service-number">05</span>
+              <h3>Sistemi legacy</h3>
+              <p>Analisi, messa in sicurezza e modernizzazione di software esistenti: aggiornamenti, refactoring e migrazioni graduali, senza fermare il lavoro.</p>
+            </article>
+            <article class="service">
+              <span class="service-number">06</span>
+              <h3>Messa online e infrastruttura</h3>
+              <p>Server Linux e ambienti Docker configurati e documentati: rilasci prevedibili, backup e un software che resta online in modo affidabile.</p>
+            </article>
+          </div>
+          <div class="clients" id="clients">
+            <h3 class="clients-title">Con chi lavoro</h3>
+            <div class="services services-3">
+              <article class="service">
+                <h3>PMI</h3>
+                <p>Software gestionali, portali e integrazioni su misura, oppure l'evoluzione dei sistemi che l'azienda usa ogni giorno e che non si possono fermare.</p>
+              </article>
+              <article class="service">
+                <h3>Startup</h3>
+                <p>Dal concept all'MVP, con scelte tecniche che reggono quando il prodotto cresce e il team si allarga.</p>
+              </article>
+              <article class="service">
+                <h3>Agenzie e team</h3>
+                <p>Sviluppo Laravel e Vue in affiancamento al vostro team, anche su progetti già avviati o in white label.</p>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section shell" id="work" aria-labelledby="work-label">
       <div class="section-grid">
-        <h2 class="section-label" id="work-label"><span>04</span> Progetti</h2>
+        <h2 class="section-label" id="work-label"><span>03</span> Progetti</h2>
         <div class="services" tabindex="0" aria-label="Progetti">
           <article class="service">
             <span class="service-number">Backend · Laravel · Vue</span>
@@ -209,12 +211,13 @@
             </ul>
           </article>
         </div>
+        <p class="work-counter" aria-hidden="true"><span>1</span> / 8</p>
       </div>
     </section>
 
     <section class="section shell" id="technology" aria-labelledby="technology-label">
       <div class="section-grid">
-        <h2 class="section-label" id="technology-label"><span>05</span> Competenze</h2>
+        <h2 class="section-label" id="technology-label"><span>04</span> Competenze</h2>
         <ul class="technology-list">
           <li>
             <h3>Laravel / PHP</h3>
@@ -262,7 +265,7 @@
 
     <section class="section oss shell" id="opensource" aria-labelledby="opensource-label">
       <div class="section-grid">
-        <h2 class="section-label" id="opensource-label"><span>06</span> Open source</h2>
+        <h2 class="section-label" id="opensource-label"><span>05</span> Open source</h2>
         <div>
           <p class="body-copy">Progetti personali e open source: il posto dove sperimento e dove si vede come lavoro quando le scelte sono tutte mie.</p>
           <ul class="technology-list">
@@ -324,7 +327,7 @@
 
     <section class="section background shell" id="background" aria-labelledby="background-label">
       <div class="section-grid">
-        <h2 class="section-label" id="background-label"><span>07</span> Percorso</h2>
+        <h2 class="section-label" id="background-label"><span>06</span> Percorso</h2>
         <div>
           <p class="background-copy">Nel corso degli anni ho lavorato come sviluppatore, designer, consulente e responsabile di progetto, con aziende, agenzie e team multidisciplinari. Ho seguito prodotti digitali in tutte le fasi del loro ciclo di vita, dalla progettazione allo sviluppo e alla messa in produzione.</p>
           <ol class="timeline">
@@ -360,6 +363,18 @@
     </section>
   </main>
   <script>
+    // Progetti su mobile: il contatore "1 / 8" segue la scheda visibile nel carosello
+    (() => {
+      const row = document.querySelector('#work .services'), out = document.querySelector('.work-counter span');
+      const cards = [...row.children];
+      row.addEventListener('scroll', () => {
+        const left = row.getBoundingClientRect().left;
+        const dist = cards.map(c => Math.abs(c.getBoundingClientRect().left - left));
+        const atEnd = row.scrollLeft + row.clientWidth >= row.scrollWidth - 2;
+        out.textContent = atEnd ? cards.length : dist.indexOf(Math.min(...dist)) + 1;
+      }, { passive: true });
+    })();
+
     // Brano in ascolto da Spotify, letto da Last.fm (rufoandrea). Senza chiave lo specchietto resta nascosto.
     (() => {
       const KEY = 'f3fbc5b48f8b51779716310b939c5450'; // chiave API Last.fm (sola lettura, può stare nel codice)
